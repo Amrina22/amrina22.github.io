@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Showcase 2</title>
+    <link rel="stylesheet" href="projek-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="work.html" class="work">Work</a>
+      <div class="elip-back"></div>
+    </nav>
+    <div class="home">Project Showcase 2</div>
+    <div class="line-samping"></div>
+    <div class="main-con">
+      <div class="head-con">
+        <h1 class="place-your-title-here">GRU vs LSTM on Google's Stock</h1>
+        <div class="tag">
+          <div class="tag1">
+            <p class="tag-1">AI</p>
+            <div class="rec-tag-1"></div>
+          </div>
+          <div class="tag2">
+            <p class="tag-2">Deep Learning</p>
+            <div class="rec-tag-2"></div>
+          </div>
+          <div class="tag3">
+            <p class="tag-3">Machine Learning</p>
+            <div class="rec-tag-3"></div>
+          </div>
+          <div class="tag4">
+            <p class="tag-4">Stock Market</p>
+            <div class="rec-tag-4"></div>
+          </div>
+          <div class="tag5">
+            <p class="tag-5">Google</p>
+            <div class="rec-tag-5"></div>
+          </div>
+        </div>
+        <div class="main-con-con">
+          <div class="bookmark">
+            <a href="#header1" class="bm-ov">Overview</a>
+            <a href="#header2" class="bm-dc">Data Collection</a>
+            <a href="#header3" class="bm-dp">Data Preparation</a>
+            <a href="#header4" class="bm-mod">Modeling</a>
+            <a href="#header5" class="bm-moe">Model Evaluation</a>
+            <a href="#header6" class="bm-con">Conclusion</a>
+          </div>
+          <article class="project-stock">
+            <section id="section-one">
+              <article class="project-stok-one">
+                <div class="overview" id="header1">Overview</div>
+                <div class="line-ov"></div>
+                <img class="dowload-1" src="static/img/download.png" alt="stock-market" width="500" height="261">
+                <p class="para-ov">
+                  In today&#039;s volatile financial markets, accurate stock price predictions
+                  are essential for investors and traders alike. Traditional statistical
+                  methods, such as linear regression and moving averages, often struggle to
+                  capture the complex patterns and non-linear relationships inherent in
+                  financial data. These methods are limited in their ability to handle noise,
+                  outliers, and long-term dependencies, which are common characteristics of
+                  stock price data.
+                  <br />
+                  Deep learning, particularly Long Short-Term Memory (LSTM) and Gated Recurrent
+                  Unit (GRU) neural network models, have emerged as powerful tools for time
+                  series forecasting, including stock market predictions. These models are
+                  specifically designed to handle sequential data and capture complex patterns,
+                  making them well-suited for the challenges posed by financial markets.
+                  <br />
+                  LSTMs and GRUs employ sophisticated mechanisms to address the vanishing
+                  gradient problem, a common issue in traditional recurrent neural networks.
+                  These mechanisms allow the models to learn long-term dependencies, enabling
+                  them to capture the impact of past events on future stock prices.
+                  Additionally, LSTMs and GRUs are more robust to noise and outliers, making
+                  them less susceptible to overfitting and providing more reliable predictions.
+                </p>
+                <div class="gb-ov"></div>
+              </article>
+            </section>
+            <section id="section-two">
+              <article class="project-stock-two">
+                <div class="data-collection" id="header2">Data Collection</div>
+                <div class="line-dc"></div>
+                <p class="para-dc">
+                  We’ll use Python tools called pandas and yfinance to get Google stock data
+                  from the past 13 years. This data will show things like the date, opening
+                  price, highest price, lowest price, closing price, adjusted closing price, and
+                  how many shares were bought and sold each day. We’ll save this data in a CSV
+                  file so we can use it later.
+                </p>
+                <div class="rec-scrap"></div>
+                <div class="cd-scrap">
+                  <span>
+                    <span class="cd-scrap-span">import</span>
+                    <span class="cd-scrap-span2">pandas</span>
+                    <span class="cd-scrap-span3">as</span>
+                    <span class="cd-scrap-span4">
+                      pd
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span5">import</span>
+                    <span class="cd-scrap-span6">yfinance</span>
+                    <span class="cd-scrap-span7">as</span>
+                    <span class="cd-scrap-span8">
+                      yf
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span9">
+                      # Define the ticker symbol
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span10">ticker_symbol =</span>
+                    <span class="cd-scrap-span11">
+                      &quot;GOOG&quot;
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span12">
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span13">
+                      # Define the date range
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span14">start_date =</span>
+                    <span class="cd-scrap-span15">
+                      &quot;2010-01-01&quot;
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span16">end_date =</span>
+                    <span class="cd-scrap-span17">
+                      &quot;2023-08-30&quot;
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span18">
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span19">
+                      # Download historical data
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span20">
+                      data = yf.download(ticker_symbol, start=start_date, end=end_date)
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span21">
+                      # Save data to CSV file
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span22">csv_filename =</span>
+                    <span class="cd-scrap-span23">
+                      &quot;google_stock_data.csv&quot;
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span24">
+                      data.to_csv(csv_filename)
+                      <br />
+                      print(
+                    </span>
+                    <span class="cd-scrap-span25">f&quot;Data saved to</span>
+                    <span class="cd-scrap-span26">&lcub;csv_filename&rcub;</span>
+                    <span class="cd-scrap-span27">&quot;</span>
+                    <span class="cd-scrap-span28">)</span>
+                  </span>
+                </div>
+                <div class="gb-dc"></div>            
+              </article>
+            </section>
+            <section id="section-three">
+              <article class="project-stock-three">
+                <div class="data-preparation" id="header3">Data Preparation</div>
+                <div class="line-dp"></div>
+                <article class="project-stock-three-first">
+                  <h1 class="load-dataset">Load Dataset</h1>
+                  <div class="rec-load"></div>
+                  <div class="cd-load">
+                    <span>
+                      <span class="cd-load-span">df = pd.read_csv(</span>
+                      <span class="cd-load-span2">&quot;google_stock_data.csv&quot;</span>
+                      <span class="cd-load-span3">
+                        )
+                        <br />
+                        df.head()
+                      </span>
+                    </span>
+                  </div>
+                  <img class="img-load" src="static/img/df.png" alt="loading data">
+                </article>
+                <article class="project-stock-three-second">
+                  <h1 class="normalization">Normalization</h1>
+                  <p class="para-nor">
+                    To make sure all the data in our stock market dataset is treated fairly,
+                    we&#039;ll change its numbers to be between 0 and 1. This way, no number will
+                    be too big or too small to influence the computer&#039;s learning. It&#039;s
+                    important for computer models that learn from data, because if some numbers
+                    are much bigger than others, they might get too much attention.
+                  </p>
+                  <div class="rec-nor"></div>
+                  <div class="cd-norm">
+                    <span>
+                      <span class="cd-norm-span">from</span>
+                      <span class="cd-norm-span2">sklearn.preprocessing</span>
+                      <span class="cd-norm-span3">import</span>
+                      <span class="cd-norm-span4">
+                        MinMaxScaler
+                        <br />
+                        scaler = MinMaxScaler(feature_range=(0, 1))
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-norm-span5">
+                        # Extract numerical features for scaling
+                        <br />
+                      </span>
+                      <span class="cd-norm-span6">
+                        numerical_features = df.select_dtypes(include=[&#039;float64&#039;,
+                        &#039;int64&#039;])
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-norm-span7">
+                        # Use the numerical features for scaling
+                        <br />
+                      </span>
+                      <span class="cd-norm-span8">
+                        scaler = MinMaxScaler(feature_range=(0, 1))
+                        <br />
+                        scaled_data = scaler.fit_transform(numerical_features)
+                      </span>
+                    </span>
+                  </div>
+                </article>
+                <article class="project-stock-three-third">
+                  <h1 class="create-sequence">Create Sequence</h1>
+                  <p class="para-seq">
+                    We&#039;ll break down the data into chunks of 15 consecutive data points. Each
+                    chunk will be used to predict the next data point. This will teach our model
+                    to recognize patterns and relationships within the data and make better
+                    predictions for future values.
+                  </p>
+                  <div class="rec-seq"></div>
+                  <div class="cd-seq">
+                    <span>
+                      <span class="cd-seq-span">import</span>
+                      <span class="cd-seq-span2">numpy</span>
+                      <span class="cd-seq-span3">as</span>
+                      <span class="cd-seq-span4">
+                        np
+                        <br />
+                      </span>
+                      <span class="cd-seq-span5">def</span>
+                      <span class="cd-seq-span6">create_sequences(</span>
+                      <span class="cd-seq-span7">data</span>
+                      <span class="cd-seq-span8">,</span>
+                      <span class="cd-seq-span9">window_size</span>
+                      <span class="cd-seq-span10">
+                        ):
+                        <br />
+                          X, y = [], []
+                        <br />
+                         
+                      </span>
+                      <span class="cd-seq-span11">for</span>
+                      <span class="cd-seq-span12">i</span>
+                      <span class="cd-seq-span13">in</span>
+                      <span class="cd-seq-span14"></span>
+                      <span class="cd-seq-span15">range</span>
+                      <span class="cd-seq-span16">
+                        (len(data) - window_size):
+                        <br />
+                            X.append(data[i:(i + window_size), :])
+                        <br />
+                            y.append(data[i + window_size, 0])
+                        <br />
+                          return np.array(X), np.array(y)
+                        <br />
+                        <br />
+                        window_size =
+                      </span>
+                      <span class="cd-seq-span17">
+                        15
+                        <br />
+                      </span>
+                      <span class="cd-seq-span18">
+                        X, y = create_sequences(scaled_data, window_size)
+                        <br />
+                        <br />
+                        X = X.reshape((X.shape[
+                      </span>
+                      <span class="cd-seq-span19">0</span>
+                      <span class="cd-seq-span20">], X.shape[</span>
+                      <span class="cd-seq-span21">1</span>
+                      <span class="cd-seq-span22">], numerical_features.shape[</span>
+                      <span class="cd-seq-span23">1</span>
+                      <span class="cd-seq-span24">]))</span>
+                    </span>
+                  </div>
+                  <div class="gb-dp"></div>
+                </article>           
+              </article>
+            </section>
+            <section id="section-four">
+              <article class="project-stock-four">
+                <div class="modeling" id="header4">Modeling</div>
+                <div class="line-mod"></div>
+                <article class="project-stock-four-first">
+                  <h1 class="split-dataset-into-train-and-test">Split dataset into Train and Test</h1>
+                  <p class="para-split">
+                    Separating the dataset into train data and test data, with an 80% ration ratio
+                    for trains.
+                  </p>
+                  <div class="rec-split"></div>
+                  <div class="cd-split">
+                    <span>
+                      <span class="cd-split-span">split =</span>
+                      <span class="cd-split-span2">int</span>
+                      <span class="cd-split-span3">(</span>
+                      <span class="cd-split-span4">0.8</span>
+                      <span class="cd-split-span5">*</span>
+                      <span class="cd-split-span6">len</span>
+                      <span class="cd-split-span7">
+                        (X))
+                        <br />
+                        X_train, X_test = X[:split], X[split:]
+                        <br />
+                        y_train, y_test = y[:split], y[split:]
+                      </span>
+                    </span>
+                  </div>                
+                </article>
+                <article class="project-stock-four-second">
+                  <h1 class="gru-model">GRU MODEL</h1>
+                  <p class="para-grumo">
+                    We use the Adam optimizer and Mean Squared Error loss function to build the
+                    model. This GRU model is made to find patterns in the data that happen in a
+                    certain order and stops the model from learning too much from one part of the
+                    data.
+                  </p>
+                  <div class="rec-grumo"></div>
+                  <div class="cd-grumo">
+                    <span>
+                      <span class="cd-grumo-span">from</span>
+                      <span class="cd-grumo-span2">keras.layers</span>
+                      <span class="cd-grumo-span3">import</span>
+                      <span class="cd-grumo-span4">
+                        GRU, Dropout, SimpleRNN , Dense
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span5">from</span>
+                      <span class="cd-grumo-span6">keras.models</span>
+                      <span class="cd-grumo-span7">import</span>
+                      <span class="cd-grumo-span8">
+                        Sequential
+                        <br />
+                        <br />
+                        <br />
+                        gru_model = Sequential()
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span9">
+                        # First GRU layer with dropout
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span10">gru_model.add(GRU(units=</span>
+                      <span class="cd-grumo-span11">50</span>
+                      <span class="cd-grumo-span12">, return_sequences=</span>
+                      <span class="cd-grumo-span13">True</span>
+                      <span class="cd-grumo-span14">, input_shape=(X_train.shape[</span>
+                      <span class="cd-grumo-span15">1</span>
+                      <span class="cd-grumo-span16">], X_train.shape[</span>
+                      <span class="cd-grumo-span17">2</span>
+                      <span class="cd-grumo-span18">
+                        ])))
+                        <br />
+                        gru_model.add(Dropout(
+                      </span>
+                      <span class="cd-grumo-span19">0.2</span>
+                      <span class="cd-grumo-span20">
+                        ))
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span21">
+                        # Second GRU layer with dropout
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span22">gru_model.add(GRU(units=</span>
+                      <span class="cd-grumo-span23">50</span>
+                      <span class="cd-grumo-span24">, return_sequences=</span>
+                      <span class="cd-grumo-span25">True</span>
+                      <span class="cd-grumo-span26">
+                        ))
+                        <br />
+                        gru_model.add(Dropout(
+                      </span>
+                      <span class="cd-grumo-span27">0.2</span>
+                      <span class="cd-grumo-span28">
+                        ))
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span29">
+                        # Third GRU layer with dropout
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span30">gru_model.add(GRU(units=</span>
+                      <span class="cd-grumo-span31">50</span>
+                      <span class="cd-grumo-span32">, return_sequences=</span>
+                      <span class="cd-grumo-span33">True</span>
+                      <span class="cd-grumo-span34">
+                        ))
+                        <br />
+                        gru_model.add(Dropout(
+                      </span>
+                      <span class="cd-grumo-span35">0.2</span>
+                      <span class="cd-grumo-span36">
+                        ))
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span37">
+                        # Fourth GRU layer with dropout
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span38">gru_model.add(GRU(units=</span>
+                      <span class="cd-grumo-span39">50</span>
+                      <span class="cd-grumo-span40">
+                        ))
+                        <br />
+                        gru_model.add(Dropout(
+                      </span>
+                      <span class="cd-grumo-span41">0.2</span>
+                      <span class="cd-grumo-span42">
+                        ))
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span43">
+                        # output layer
+                        <br />
+                      </span>
+                      <span class="cd-grumo-span44">gru_model.add(Dense(units=</span>
+                      <span class="cd-grumo-span45">1</span>
+                      <span class="cd-grumo-span46">
+                        ))
+                        <br />
+                        <br />
+                        gru_model.compile(optimizer=
+                      </span>
+                      <span class="cd-grumo-span47">&#039;adam&#039;</span>
+                      <span class="cd-grumo-span48">, loss=</span>
+                      <span class="cd-grumo-span49">&#039;mean_squared_error&#039;</span>
+                      <span class="cd-grumo-span50">
+                        )
+                        <br />
+                        <br />
+                        gru_model.summary()
+                      </span>
+                    </span>
+                  </div>
+                  <img class="img-grumo" src="static/img/gru_model.png" alt="GRU Model Summary">               
+                </article>
+                <article class="prject-stock-four-third">
+                  <h1 class="training-data">Training Data</h1>
+                  <p class="para-grutrain">
+                    We will train this model using 35 epochs and a batch size of 32.
+                  </p>
+                  <div class="rec-traingru"></div>
+                  <div class="cd-grutrain">
+                    <span>
+                      <span class="cd-grutrain-span">
+                        gru_model.fit(X_train, y_train, epochs=
+                      </span>
+                      <span class="cd-grutrain-span2">35</span>
+                      <span class="cd-grutrain-span3">, batch_size=</span>
+                      <span class="cd-grutrain-span4">32</span>
+                      <span class="cd-grutrain-span5">)</span>
+                    </span>
+                  </div>
+                  <img class="img-grutrain" src="static/img/gru_epoch.png" alt="GRU Model Training">                
+                </article>
+                <article class="project-stock-four-fourth">
+                  <h1 class="visualizating-gru-model-predictions">Visualizating GRU Model Prediction</h1>
+                  <p class="para-gruviz">  Once the model is finished learning, we’ll use it to predict the stock prices
+                    in the x_test data. Then, we’ll make a picture that shows both the real prices
+                    and the prices that the model predicted.
+                  </p>
+                  <div class="rec-vizgru"></div>
+                  <div class="cd-gruviz">
+                    <span>
+                      <span class="cd-gruviz-span">import</span>
+                      <span class="cd-gruviz-span2">matplotlib.pyplot</span>
+                      <span class="cd-gruviz-span3">as</span>
+                      <span class="cd-gruviz-span4">
+                        plt
+                        <br />
+                        <br />
+                        predicted_gru = gru_model.predict(X_test)
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-gruviz-span5">
+                        # Inverse transform the predicted and actual values
+                        <br />
+                      </span>
+                      <span class="cd-gruviz-span6">
+                        temp_array = np.zeros((predicted_gru.shape[0], 6))
+                        <br />
+                        temp_array[:,0] = predicted_gru[:,0]
+                        <br />
+                        <br />
+                        predicted_gru = scaler.inverse_transform(temp_array)[:,0]
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-gruviz-span7">
+                        # Inverse transform the actual values
+                        <br />
+                      </span>
+                      <span class="cd-gruviz-span8">
+                        temp_array = np.zeros((y_test.shape[0], 6))
+                        <br />
+                        temp_array[:,0] = y_test
+                        <br />
+                        <br />
+                        y_test_actual = scaler.inverse_transform(temp_array)[:,0]
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-gruviz-span9">
+                        # Plotting
+                        <br />
+                      </span>
+                      <span class="cd-gruviz-span10">plt.figure(figsize=(</span>
+                      <span class="cd-gruviz-span11">12</span>
+                      <span class="cd-gruviz-span12">,</span>
+                      <span class="cd-gruviz-span13">6</span>
+                      <span class="cd-gruviz-span14">
+                        ))
+                        <br />
+                        plt.plot(y_test_actual, label=
+                      </span>
+                      <span class="cd-gruviz-span15">&#039;Actual&#039;</span>
+                      <span class="cd-gruviz-span16">, color=</span>
+                      <span class="cd-gruviz-span17">&#039;blue&#039;</span>
+                      <span class="cd-gruviz-span18">
+                        )
+                        <br />
+                        plt.plot(predicted_gru, label=
+                      </span>
+                      <span class="cd-gruviz-span19">&#039;Predicted&#039;</span>
+                      <span class="cd-gruviz-span20">, color=</span>
+                      <span class="cd-gruviz-span21">&#039;red&#039;</span>
+                      <span class="cd-gruviz-span22">
+                        )
+                        <br />
+                        plt.title(
+                      </span>
+                      <span class="cd-gruviz-span23">&#039;Actual vs Predicted&#039;</span>
+                      <span class="cd-gruviz-span24">
+                        )
+                        <br />
+                        plt.xlabel(
+                      </span>
+                      <span class="cd-gruviz-span25">&#039;Time&#039;</span>
+                      <span class="cd-gruviz-span26">
+                        )
+                        <br />
+                        plt.ylabel(
+                      </span>
+                      <span class="cd-gruviz-span27">&#039;Stock Price&#039;</span>
+                      <span class="cd-gruviz-span28">
+                        )
+                        <br />
+                        plt.legend()
+                        <br />
+                        plt.show()
+                      </span>
+                    </span>
+                  </div>
+                  <img class="img-gruviz" src="static/img/gru.png" alt="Visualization GRU Prediction">                
+                </article>
+                <article class="project-stock-four-fifth">
+                  <h1 class="lstm-model">LSTM MODEL</h1>
+                  <p class="para-lsmo">
+                    We use the Adam optimizer and Mean Squared Error loss function to build the
+                    model. This LSTM model is made to find patterns in the data that happen in a
+                    certain order and stops the model from learning too much from one part of the
+                    data.
+                  </p>
+                  <div class="rec-lsmo"></div>
+                  <div class="cd-lsmo">
+                    <span>
+                      <span class="cd-lsmo-span">from</span>
+                      <span class="cd-lsmo-span2">keras.layers</span>
+                      <span class="cd-lsmo-span3">import</span>
+                      <span class="cd-lsmo-span4">
+                        LSTM, Dropout, SimpleRNN , Dense
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span5">from</span>
+                      <span class="cd-lsmo-span6">keras.models</span>
+                      <span class="cd-lsmo-span7">import</span>
+                      <span class="cd-lsmo-span8">
+                        Sequential
+                        <br />
+                        <br />
+                        <br />
+                        lstm_model = Sequential()
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span9">
+                        # First GRU layer with dropout
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span10">lstm_model.add(LSTM(units=</span>
+                      <span class="cd-lsmo-span11">50</span>
+                      <span class="cd-lsmo-span12">, return_sequences=</span>
+                      <span class="cd-lsmo-span13">True</span>
+                      <span class="cd-lsmo-span14">, input_shape=(X_train.shape[</span>
+                      <span class="cd-lsmo-span15">1</span>
+                      <span class="cd-lsmo-span16">], X_train.shape[</span>
+                      <span class="cd-lsmo-span17">2</span>
+                      <span class="cd-lsmo-span18">
+                        ])))
+                        <br />
+                        lstm_model.add(Dropout(
+                      </span>
+                      <span class="cd-lsmo-span19">0.2</span>
+                      <span class="cd-lsmo-span20">
+                        ))
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span21">
+                        # Second GRU layer with dropout
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span22">lstm_model.add(LSTM(units=</span>
+                      <span class="cd-lsmo-span23">50</span>
+                      <span class="cd-lsmo-span24">, return_sequences=</span>
+                      <span class="cd-lsmo-span25">True</span>
+                      <span class="cd-lsmo-span26">
+                        ))
+                        <br />
+                        lstm_model.add(Dropout(
+                      </span>
+                      <span class="cd-lsmo-span27">0.2</span>
+                      <span class="cd-lsmo-span28">
+                        ))
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span29">
+                        # Third GRU layer with dropout
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span30">lstm_model.add(LSTM(units=</span>
+                      <span class="cd-lsmo-span31">50</span>
+                      <span class="cd-lsmo-span32">, return_sequences=</span>
+                      <span class="cd-lsmo-span33">True</span>
+                      <span class="cd-lsmo-span34">
+                        ))
+                        <br />
+                        gru_model.add(Dropout(
+                      </span>
+                      <span class="cd-lsmo-span35">0.2</span>
+                      <span class="cd-lsmo-span36">
+                        ))
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span37">
+                        # Fourth GRU layer with dropout
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span38">lstm_model.add(LSTM(units=</span>
+                      <span class="cd-lsmo-span39">50</span>
+                      <span class="cd-lsmo-span40">
+                        ))
+                        <br />
+                        gru_model.add(Dropout(
+                      </span>
+                      <span class="cd-lsmo-span41">0.2</span>
+                      <span class="cd-lsmo-span42">
+                        ))
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span43">
+                        # output layer
+                        <br />
+                      </span>
+                      <span class="cd-lsmo-span44">lstm_model.add(Dense(units=</span>
+                      <span class="cd-lsmo-span45">1</span>
+                      <span class="cd-lsmo-span46">
+                        ))
+                        <br />
+                        <br />
+                        lstm_model.compile(optimizer=
+                      </span>
+                      <span class="cd-lsmo-span47">&#039;adam&#039;</span>
+                      <span class="cd-lsmo-span48">, loss=</span>
+                      <span class="cd-lsmo-span49">&#039;mean_squared_error&#039;</span>
+                      <span class="cd-lsmo-span50">
+                        )
+                        <br />
+                        <br />
+                        lstm_model.summary()
+                      </span>
+                    </span>
+                  </div>
+                  <img class="img-lsmo" src="static/img/lstm_model.png" alt="LSTM Model Summary">                
+                </article>
+                <article class="project-stock-four-sixth">
+                  <h1 class="training-data">Training Data</h1>
+                  <p class="para-lstrain">
+                    We will train this model using 35 epochs and a batch size of 32.
+                  </p>
+                  <div class="rec-lstrain"></div>
+                  <div class="cd-lstrain">
+                    <span>
+                      <span class="cd-lstrain-span">
+                        lstm_model.fit(X_train, y_train, epochs=
+                      </span>
+                      <span class="cd-lstrain-span2">35</span>
+                      <span class="cd-lstrain-span3">, batch_size=</span>
+                      <span class="cd-lstrain-span4">32</span>
+                      <span class="cd-lstrain-span5">)</span>
+                    </span>
+                  </div>
+                  <img class="img-lstrain" src="static/img/lstm_epoch.png" alt="LSTM Model Training">                
+                </article>
+                <article class="project-stock-four-seventh">
+                  <h1 class="visualizating-lstm-model-predictions">
+                    Visualizating LSTM Model Predictions
+                  </h1>
+                  <p class="para-lsviz">
+                    Once the model is finished learning, we’ll use it to predict the stock prices
+                    in the x_test data. Then, we’ll make a picture that shows both the real prices
+                    and the prices that the model predicted.
+                  </p>
+                  <div class="rec-lsviz"></div>
+                  <div class="cd-lsviz">
+                    <span>
+                      <span class="cd-lsviz-span">import</span>
+                      <span class="cd-lsviz-span2">matplotlib.pyplot</span>
+                      <span class="cd-lsviz-span3">as</span>
+                      <span class="cd-lsviz-span4">
+                        plt
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-lsviz-span5">
+                        # Make predictions
+                        <br />
+                      </span>
+                      <span class="cd-lsviz-span6">
+                        predicted_lstm = lstm_model.predict(X_test)
+                        <br />
+                      </span>
+                      <span class="cd-lsviz-span7">
+                        <br />
+                        # Inverse transform the predicted and actual values
+                        <br />
+                      </span>
+                      <span class="cd-lsviz-span8">
+                        temp_array = np.zeros((predicted_lstm.shape[0], 6))
+                        <br />
+                        temp_array[:,0] = predicted_lstm[:,0]
+                        <br />
+                        predicted_lstm = scaler.inverse_transform(temp_array)[:,0]
+                        <br />
+                      </span>
+                      <span class="cd-lsviz-span9">
+                        <br />
+                        # Inverse tranform y_test actual
+                        <br />
+                      </span>
+                      <span class="cd-lsviz-span10">
+                        temp_array = np.zeros((y_test.shape[0], 6))
+                        <br />
+                        temp_array[:,0] = y_test
+                        <br />
+                        y_test_actual = scaler.inverse_transform(temp_array)[:,0]
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-lsviz-span11">
+                        # Plotting
+                        <br />
+                      </span>
+                      <span class="cd-lsviz-span12">
+                        plt.figure(figsize=(12, 6))
+                        <br />
+                        plt.plot(y_test_actual, label=
+                      </span>
+                      <span class="cd-lsviz-span13">&#039;Actual&#039;</span>
+                      <span class="cd-lsviz-span14">, color=</span>
+                      <span class="cd-lsviz-span15">&#039;blue&#039;</span>
+                      <span class="cd-lsviz-span16">
+                        )
+                        <br />
+                        plt.plot(predicted_lstm, label=
+                      </span>
+                      <span class="cd-lsviz-span17">&#039;Predicted&#039;</span>
+                      <span class="cd-lsviz-span18">, color=</span>
+                      <span class="cd-lsviz-span19">&#039;red&#039;</span>
+                      <span class="cd-lsviz-span20">
+                        )
+                        <br />
+                        plt.title(
+                      </span>
+                      <span class="cd-lsviz-span21">&#039;Actual vs Predicted&#039;</span>
+                      <span class="cd-lsviz-span22">
+                        )
+                        <br />
+                        plt.xlabel(
+                      </span>
+                      <span class="cd-lsviz-span23">&#039;Time&#039;</span>
+                      <span class="cd-lsviz-span24">
+                        )
+                        <br />
+                        plt.ylabel(
+                      </span>
+                      <span class="cd-lsviz-span25">&#039;Stock Price&#039;</span>
+                      <span class="cd-lsviz-span26">
+                        )
+                        <br />
+                        plt.legend()
+                        <br />
+                        plt.show()
+                      </span>
+                    </span>
+                  </div>
+                  <img class="img-lsviz" src="static/img/lstm.png" alt="Visualization LSTM Prediction">           
+                </article>
+                <div class="gb-mod"></div>
+              </article>
+            </section>
+            <section id="section-five">
+              <article class="project-stock-five">
+                <div class="model-evaluation" id="header5">Model Evaluation</div>
+                <div class="line-moe"></div>
+                <h1 class="testing-gru-and-lstm-on-new-google-stock-price">Testing GRU and LSTM on new Google stock price</h1>
+                <p class="para-comp">
+                  Comparing the performance of both model ( GRU and LSTM ) on new Google stock
+                  price dataset with one year historical data.
+                  <br />
+                  Downloading a fresh dataset containing Google&#039;s stock price from the past
+                  year, normalize the data, create sequences with the same training parameters
+                  using a window size of 15, and then evaluate and plotting on both GRU and LSTM
+                  model.
+                </p>
+                <div class="rec-newd"></div>
+                <div class="cd-new">
+                  <span>
+                    <span class="cd-new-span">
+                      # Assuming you have new data for Google stock (new_goog_data) in a
+                      DataFrame
+                      <br />
+                    </span>
+                    <span class="cd-new-span2">
+                      new_goog_data = yf.download(&quot;GOOG&quot;, start=
+                    </span>
+                    <span class="cd-new-span3">&quot;2023-08-31&quot;</span>
+                    <span class="cd-new-span4">, end=</span>
+                    <span class="cd-new-span5">&quot;2024-08-31&quot;</span>
+                    <span class="cd-new-span6">
+                      )
+                      <br />
+                      new_goog_data
+                    </span>
+                  </span>
+                </div>
+                <div class="rec-newtr"></div>
+                <div class="cd-newtrain-viz">
+                  <span>
+                    <span class="cd-newtrain-viz-span">
+                      # Select the &#039;Close&#039; column as before
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span2">
+                      new_data = new_goog_data[&#039;Close&#039;].values.reshape(-1, 1)
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span3">
+                      # Scale the data using the same scaler that was fit on the original
+                      training data
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span4">
+                      scaled_new_data = scaler.transform(new_data)
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span5">
+                      # Create sequences for the new data
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span6">
+                      window_size = 15
+                      <br />
+                      X_new, y_new = create_sequences(scaled_new_data, window_size)
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span7">
+                      # Reshape to match the model&#039;s expected input shape
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span8">
+                      X_new = X_new.reshape(X_new.shape[0], X_new.shape[1], 1)
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span9">
+                      # Make predictions using the trained models
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span10">
+                      predicted_gru_new = gru_model.predict(X_new)
+                      <br />
+                      predicted_lstm_new = lstm_model.predict(X_new)
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span11">
+                      # Inverse transform the predictions back to the original scale
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span12">
+                      lstm_predictions_new = scaler.inverse_transform(predicted_lstm_new)[:, 0]
+                      <br />
+                      gru_predictions_new = scaler.inverse_transform(predicted_gru_new)[:, 0]
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span13">
+                      # Inverse transform the actual values
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span14">
+                      y_actual = scaler.inverse_transform(y)
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span15">
+                      # Plotting
+                      <br />
+                    </span>
+                    <span class="cd-newtrain-viz-span16">
+                      plt.figure(figsize=(12, 6))
+                      <br />
+                      plt.plot(y_actual, label=
+                    </span>
+                    <span class="cd-newtrain-viz-span17">&#039;Actual&#039;</span>
+                    <span class="cd-newtrain-viz-span18">, color=</span>
+                    <span class="cd-newtrain-viz-span19">&#039;blue&#039;</span>
+                    <span class="cd-newtrain-viz-span20">
+                      )
+                      <br />
+                      plt.plot(lstm_predictions_new, label=
+                    </span>
+                    <span class="cd-newtrain-viz-span21">&#039;LSTM Predictions&#039;</span>
+                    <span class="cd-newtrain-viz-span22">, color=</span>
+                    <span class="cd-newtrain-viz-span23">&#039;red&#039;</span>
+                    <span class="cd-newtrain-viz-span24">, linestyle=</span>
+                    <span class="cd-newtrain-viz-span25">&#039;--&#039;</span>
+                    <span class="cd-newtrain-viz-span26">
+                      )
+                      <br />
+                      plt.plot(gru_predictions_new, label=
+                    </span>
+                    <span class="cd-newtrain-viz-span27">&#039;GRU Predictions&#039;</span>
+                    <span class="cd-newtrain-viz-span28">, color=</span>
+                    <span class="cd-newtrain-viz-span29">&#039;green&#039;</span>
+                    <span class="cd-newtrain-viz-span30">, linestyle=</span>
+                    <span class="cd-newtrain-viz-span31">&#039;--&#039;</span>
+                    <span class="cd-newtrain-viz-span32">
+                      )
+                      <br />
+                      plt.title(
+                    </span>
+                    <span class="cd-newtrain-viz-span33">
+                      &#039;Actual vs Predictions (LSTM vs GRU)&#039;
+                    </span>
+                    <span class="cd-newtrain-viz-span34">
+                      )
+                      <br />
+                      plt.xlabel(
+                    </span>
+                    <span class="cd-newtrain-viz-span35">&#039;Time&#039;</span>
+                    <span class="cd-newtrain-viz-span36">
+                      )
+                      <br />
+                      plt.ylabel(
+                    </span>
+                    <span class="cd-newtrain-viz-span37">&#039;Stock Price&#039;</span>
+                    <span class="cd-newtrain-viz-span38">
+                      )
+                      <br />
+                      plt.legend()
+                      <br />
+                      plt.show()
+                    </span>
+                  </span>
+                </div>
+                <img class="img-comp" src="static/img/download.png" alt="GRU vs LSTM">
+                <div class="gb-moe"></div>                     
+              </article>
+            </section>
+            <section id="section-six">
+              <article class="project-stock-six">
+                <div class="conclusion" id="header6">Conclusion</div>
+                <div class="line-con"></div>
+                <article class="project-stock-six-first">
+                  <div class="para-con-obs">
+                    <span>
+                      <span class="para-con-obs-span">
+                        Observations:
+                        <br />
+                      </span>
+                      <ol class="para-con-obs-span2">
+                        <li>
+                          Actual Stock Prices (Blue Line): The actual stock price movement over
+                          time shows fluctuations with several peaks and troughs.
+                        </li>
+                        <li>
+                          LSTM Predictions (Red Dashed Line): The LSTM model follows the general
+                          trend of the actual data. However, in some parts, the LSTM predictions
+                          slightly lag or lead the actual values, especially during periods of
+                          rapid change (peaks and troughs).
+                        </li>
+                        <li>
+                          GRU Predictions (Green Dashed Line): The GRU model also captures the
+                          overall trend of the stock price. Like the LSTM model, it deviates at
+                          times but remains relatively close to the actual stock prices.
+                        </li>
+                      </ol>
+                    </span>
+                  </div>                
+                </article>
+                <article class="project-stock-six-second">
+                  <div class="para-con-con">
+                    <span>
+                      <span class="para-con-con-span">
+                        Conclusion:
+                        <br />
+                      </span>
+                      <ul class="para-con-con-span2">
+                        <li>
+                          Both models, LSTM and GRU, appear to perform well in capturing the
+                          overall trend of the stock price movement. However, they struggle with
+                          rapid changes, such as at the peak and bottom points.
+                        </li>
+                        <li>
+                          GRU Predictions (green line) seem to smooth out the fluctuations
+                          slightly more than the LSTM predictions, while the LSTM Predictions (red
+                          line) tend to react more dynamically to sudden changes.
+                        </li>
+                        <li>
+                          Depending on the specific use case, one model may be preferred over the
+                          other:
+                        </li>
+                      </ul>
+                      <ul class="para-con-con-span3">
+                        <li>
+                          LSTM: Could be better for data where capturing small fluctuations is
+                          important, even if that means more frequent small errors.
+                        </li>
+                        <li>
+                          GRU: Could be preferred when a smoother prediction is needed, with fewer
+                          fluctuations in the predicted values.
+                        </li>
+                      </ul>
+                    </span>
+                  </div>                
+                </article>
+                <article class="project-stock-six-third">
+                  <p class="para-con">
+                    In general, both models could be improved further by fine-tuning the model
+                    parameters, adjusting the window size, or using more complex features. But
+                    based on this plot, both LSTM and GRU show promise for stock price prediction.
+                    If you want to know the whole proses, you can visit my <a href="https://github.com/Amrina22/gru-vs-lstm">Github</a>.
+                  </p>
+                </article>
+                <div class="gb-con"></div>
+              </article>
+            </section>
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer class="foot">
+      <h1 class="let-s-talk-about-the-next-big-thing">
+        Let’s Talk About The Next Big Thing !
+      </h1>
+      <div class="insta-footer">
+        <div class="line-ig"></div>
+        <h1 class="instagram">Instagram</h1>
+        <p class="osya-ar">@osya.ar</p>
+        <a href="https://www.instagram.com/osya.ar/"><img class="img-instagram" src="static/img/Instagram-hi.png" alt="Instagram"></a>
+      </div>
+      <div class="linkedin-footer">
+        <div class="line-linkind"></div>
+        <h1 class="linked-in">LinkedIn</h1>
+        <p class="amrinarosyada">amrinarosyada</p>
+        <a href="www.linkedin.com/in/amrina-rosyada2"><img class="img-linkedin" src="static/img/LinkedIn.png" alt="Linkedin"></a>
+      </div>
+    </footer>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const bookmarks = document.querySelectorAll('.bookmark a');
+
+    // Select all divs inside the articles that correspond to the section headers
+    const sections = document.querySelectorAll(`
+        .overview, 
+        .data-collection, 
+        .data-preparation, 
+        .modeling, 
+        .model-evaluation, 
+        .conclusion
+    `);
+
+    const observerOptions = {
+        root: null,  // viewport
+        rootMargin: '0px',
+        threshold: 0.6  // 60% of the section should be in view
+    };
+
+    // Intersection Observer callback
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.id;  // Get the ID of the section in view
+            if (entry.isIntersecting) {
+                // Remove 'active' class from all bookmarks
+                bookmarks.forEach(bookmark => {
+                    bookmark.classList.remove('active');
+                });
+                // Add 'active' class to the current bookmark
+                const activeBookmark = document.querySelector(`.bookmark a[href="#${id}"]`);
+                activeBookmark.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    // Observe each unique section heading
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+</script>
+</body>
+</html>

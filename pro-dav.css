@@ -1,0 +1,434 @@
+/* Font */
+@font-face {
+    font-family: MarineSikona-Regular;
+    src: url('Marine-Sikona.otf');
+}
+@font-face {
+  font-family: CourierPrime-Regular;
+  src: url('CourierPrime-Regular.ttf');
+}
+.roboto-mono-regular> {
+  font-family: "RobotoMono-Regular", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.noto-sans-medium {
+  font-family: "NotoSansHebrew-Regular", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.noto-sans-bold {
+  font-family: "NotoSansHebrew-Bold", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.dataviz-1,
+.dataviz-1 * {
+  box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+.dataviz-1 {
+  background: #ffffff;
+  height: 3800px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+.let-s-talk-about-the-next-big-thing {
+  color: #000000;
+  text-align: left;
+  font-family: "MarineSikona-Regular", sans-serif;
+  font-size: 55px;
+  font-weight: 400;
+  position: absolute;
+  left: 180px;
+  top: 3535px;
+}
+.spice-islands-a-culinary-journey {
+  color: #000000;
+  text-align: left;
+  font-family: "MarineSikona-Regular", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  position: absolute;
+  left: 207px;
+  top: 92px;
+}
+.work {
+    color: #000000;
+    text-align: left;
+    font-family: "MarineSikona-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 61px;
+    top: 44px;
+    z-index: 10; /* Make sure the link is on top */
+}
+.elip-back {
+    background: rgba(217, 217, 217, 0);
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #9dc284;
+    border-width: 2px;
+    width: 113px;
+    height: 71px;
+    position: absolute;
+    left: 29px;
+    top: 20px;
+}
+.home {
+  color: rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: "MarineSikona-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 1080px;
+  top: 46px;
+}
+.line-samping {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px 0 0 0;
+  width: 9800px;
+  height: 0px;
+  position: absolute;
+  left: 1277px;
+  top: 155px;
+  transform-origin: 0 0;
+  transform: rotate(89.927deg) scale(1, 1);
+}
+.para-pd {
+  color: #000000;
+  text-align: justified;
+  font-family: "NotoSansHebrew-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  left: 149px;
+  top: 557px;
+  width: 1089px;
+  height: 128px;
+}
+.para-dp {
+  color: #000000;
+  text-align: justified;
+  font-family: "NotoSansHebrew-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 149px;
+  top: 1183px;
+  width: 1086px;
+  height: 85px;
+}
+.para-dp2 {
+  color: #000000;
+  text-align: justified;
+  font-family: "NotoSansHebrew-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 149px;
+  top: 1869px;
+  width: 1086px;
+  height: 131px;
+}
+.para-dp3 {
+  color: #000000;
+  text-align: justified;
+  font-family: "NotoSansHebrew-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 116px;
+  top: 3104px;
+  width: 1115px;
+  height: 317px;
+}
+.gb-ov {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px 0 0 0;
+  width: 1158px;
+  height: 0px;
+  position: absolute;
+  left: 122px;
+  top: 718px;
+}
+.gb-dc {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px 0 0 0;
+  width: 1158px;
+  height: 0px;
+  position: absolute;
+  left: 122px;
+  top: 1280px;
+}
+.gb-dp {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px 0 0 0;
+  width: 1158px;
+  height: 0px;
+  position: absolute;
+  left: 122px;
+  top: 2039px;
+}
+.gb-con {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px 0 0 0;
+  width: 1158px;
+  height: 0px;
+  position: absolute;
+  left: 125px;
+  top: 3467px;
+}
+.instagram {
+  color: #000000;
+  text-align: left;
+  font-family: "MarineSikona-Regular", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  position: absolute;
+  left: 180px;
+  top: 3649px;
+}
+.linked-in {
+  color: #000000;
+  text-align: left;
+  font-family: "MarineSikona-Regular", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  position: absolute;
+  left: 700px;
+  top: 3655px;
+}
+.line-ig {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px 0 0 0;
+  width: 450px;
+  height: 0px;
+  position: absolute;
+  left: 180px;
+  top: 3631px;
+  transform-origin: 0 0;
+  transform: rotate(-0.255deg) scale(1, 1);
+}
+.line-linkind {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px 0 0 0;
+  width: 497px;
+  height: 0px;
+  position: absolute;
+  left: 700px;
+  top: 3629px;
+}
+.osya-ar {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoMono-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 180px;
+  top: 3684px;
+}
+.amrinarosyada {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoMono-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 700px;
+  top: 3684px;
+}
+.img-instagram {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 570px;
+  top: 3640px;
+  object-fit: cover;
+}
+.img-linkedin {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 1137px;
+  top: 3640px;
+  object-fit: cover;
+}
+.rec-tag-1 {
+  background: rgba(217, 217, 217, 0.01);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  width: 110px;
+  height: 29px;
+  position: absolute;
+  left: 207px;
+  top: 146px;
+}
+.rec-tag-2 {
+  background: rgba(217, 217, 217, 0.01);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  width: 153px;
+  height: 28px;
+  position: absolute;
+  left: 319px;
+  top: 147px;
+}
+.rec-tag-3 {
+  background: rgba(217, 217, 217, 0.01);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  width: 105px;
+  height: 28px;
+  position: absolute;
+  left: 475px;
+  top: 147px;
+}
+.rec-tag-4 {
+  background: rgba(217, 217, 217, 0.01);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  width: 164px;
+  height: 28px;
+  position: absolute;
+  left: 583px;
+  top: 147px;
+}
+.rec-tag-5 {
+  background: rgba(217, 217, 217, 0.01);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  width: 50px;
+  height: 28px;
+  position: absolute;
+  left: 750px;
+  top: 147px;
+}
+.tag-1 {
+  color: rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: "RobotoMono-Regular", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  position: absolute;
+  left: 220px;
+  top: 153px;
+}
+.tag-5 {
+  color: rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: "RobotoMono-Regular", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  position: absolute;
+  left: 761px;
+  top: 153px;
+}
+.tag-4 {
+  color: rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: "RobotoMono-Regular", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  position: absolute;
+  left: 605px;
+  top: 153px;
+}
+.tag-3 {
+  color: rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: "RobotoMono-Regular", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  position: absolute;
+  left: 496px;
+  top: 153px;
+}
+.tag-2 {
+  color: rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: "RobotoMono-Regular", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  position: absolute;
+  left: 340px;
+  top: 153px;
+}
+.wcc-1 {
+  width: 400px;
+  height: 326.21px;
+  position: absolute;
+  left: 494px;
+  top: 198px;
+  object-fit: cover;
+}
+.rempah-banyak-1 {
+  width: 1000px;
+  height: 364.52px;
+  position: absolute;
+  left: 191px;
+  top: 758px;
+  object-fit: cover;
+}
+.rempah-dominan-1 {
+  width: 1103px;
+  height: 553px;
+  position: absolute;
+  left: 149px;
+  top: 1292px;
+  object-fit: cover;
+}
+.graf-asos-1 {
+  width: 1000px;
+  height: 1015.79px;
+  position: absolute;
+  left: 179px;
+  top: 2088px;
+  object-fit: cover;
+}

@@ -1,0 +1,859 @@
+/* Font */
+@font-face {
+    font-family: marine;
+    src: url('Marine-Sikona.otf');
+}
+.roboto-mono-regular> {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.noto-sans-medium {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+/* Body & Container*/
+body{
+    overflow: hidden;
+}
+.container, .container *{
+    box-sizing: border-box;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.container{
+    background: #ffff;
+    height: 1024px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+a {
+    color: #000000;
+    text-decoration: none;
+}
+/* Header */
+.amrina-r {
+    color: #9dc284;
+    text-align: left;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    position: absolute;
+    left: 46px;
+    top: 22px;
+  }
+.kata {
+    color: #000000;
+    text-align: left;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 14.2px;
+    font-weight: 400;
+    position: absolute;
+    left: 700px;
+    top: 22px;
+  }
+.line-head {
+    margin-top: -2.5px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 2.5px 0 0 0;
+    width: 1378px;
+    height: 0px;
+    position: absolute;
+    left: 31px;
+    top: 86px;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+  }
+/* Navigation Bar*/
+.nav-item a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.27); /* Warna abu-abu untuk link tidak aktif */
+}
+
+.nav-item.active a {
+  color: #000; /* Warna hitam untuk link aktif */
+}
+.home {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+    position: absolute;
+    left: 32px;
+    top: 116px;
+  }
+.work2 {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+    position: absolute;
+    left: 489px;
+    top: 116px;
+  }
+.contact {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+    position: absolute;
+    left: 966px;
+    top: 116px;
+  }
+.line-home {
+    margin-top: -1.5px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1.5px 0 0 0;
+    width: 402px;
+    height: 0px;
+    position: absolute;
+    left: 35px;
+    top: 154px;
+    transform-origin: 0 0;
+    transform: rotate(0.285deg) scale(1, 1);
+  }
+.line-work {
+    margin-top: -4px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1.5px 0 0 0;
+    width: 402px;
+    height: 0px;
+    position: absolute;
+    left: 489px;
+    top: 156px;
+    transform-origin: 0 0;
+    transform: rotate(0.285deg) scale(1, 1);
+  }
+.line-con {
+    margin-top: -1.5px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1.5px 0 0 0;
+    width: 402px;
+    height: 0px;
+    position: absolute;
+    left: 972px;
+    top: 157px;
+    transform-origin: 0 0;
+    transform: rotate(0.285deg) scale(1, 1);
+  }
+  .nav-item.active .line-home {
+    border-width: 4px 0 0 0; /* Ketebalan garis untuk link aktif */
+    background-color: #000; /* Warna hitam untuk garis aktif */
+  }
+  .nav-item.active .line-work {
+    border-width: 4px 0 0 0; /* Ketebalan garis untuk link aktif */
+    background-color: #000; /* Warna hitam untuk garis aktif */
+  }
+  .nav-item.active .line-con {
+    border-width: 4px 0 0 0; /* Ketebalan garis untuk link aktif */
+    background-color: #000; /* Warna hitam untuk garis aktif */
+  }
+/* Home */
+.data-analyst-role {
+    color: #000000;
+    text-align: left;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    position: absolute;
+    left: 973px;
+    top: 248px;
+  }
+.data-science-role {
+    color: #000000;
+    text-align: left;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    position: absolute;
+    left: 972px;
+    top: 404px;
+  }
+.Ai-role {
+    color: #000000;
+    text-align: left;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    position: absolute;
+    left: 975px;
+    top: 560px;
+  }
+.hello {
+    color: #9dc284;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 110px;
+    font-weight: 400;
+    position: absolute;
+    left: 35px;
+    top: 293px;
+  }
+.services-1 {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 972px;
+    top: 214px;
+  }
+.services-2 {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 973px;
+    top: 372px;
+  }
+.services-3 {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 975px;
+    top: 527px;
+  }
+._s1 {
+    color: #9dc284;
+    text-align: left;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 972px;
+    top: 176px;
+  }
+._s2 {
+    color: #9dc284;
+    text-align: left;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 969px;
+    top: 336px;
+  }
+._s3 {
+    color: #9dc284;
+    text-align: left;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 972px;
+    top: 491px;
+  }
+.line-8 {
+    margin-top: -1px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px 0 0 0;
+    width: 351.01px;
+    height: 0px;
+    position: absolute;
+    left: 969px;
+    top: 317px;
+    transform-origin: 0 0;
+    transform: rotate(0.326deg) scale(1, 1);
+  }
+.line-9 {
+    margin-top: -1px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px 0 0 0;
+    width: 351.01px;
+    height: 0px;
+    position: absolute;
+    left: 975px;
+    top: 472px;
+    transform-origin: 0 0;
+    transform: rotate(0.326deg) scale(1, 1);
+  }
+.line-11 {
+    margin-top: -4px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 4px 0 0 0;
+    width: 859px;
+    height: 0px;
+    position: absolute;
+    left: 31px;
+    top: 660px;
+    transform-origin: 0 0;
+    transform: rotate(-0.067deg) scale(1, 1);
+  }
+.line-10 {
+    margin-top: -4px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 4px 0 0 0;
+    width: 405px;
+    height: 0px;
+    position: absolute;
+    left: 966px;
+    top: 657px;
+    transform-origin: 0 0;
+    transform: rotate(0.283deg) scale(1, 1);
+  }
+.amrina-2024 {
+    color: #000000;
+    text-align: left;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 71px;
+    top: 684px;
+  }
+  .i-am-an-data-enthusiast-that-will-help-you-uncover-the-story-further-behind-a {
+    color: rgba(0, 0, 0, 0.8);
+    text-align: left;
+    font-family: "NotoSansHebrew-Regular", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    position: absolute;
+    left: 35px;
+    top: 421px;
+    width: 685px;
+    height: 100px;
+}
+.vector-2707 {
+    width: 149px;
+    height: 62px;
+    position: absolute;
+    left: 13px;
+    top: 490px;
+    overflow: visible;
+}
+.star-1 {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 325px;
+    top: 266px;
+    overflow: visible;
+  }
+.linked-in-circled {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 1264px;
+    top: 669px;
+    object-fit: cover;
+  }
+.git-hub {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 1174px;
+    top: 669px;
+    object-fit: cover;
+  }
+.instagram {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 1084px;
+    top: 669px;
+    object-fit: cover;
+  }
+.copyright-all-rights-reserved {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 31px;
+    top: 680px;
+    object-fit: cover;
+  }
+/* Work */
+.data-visualization {
+  color: #9dc284;
+  text-align: left;
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 155px;
+  top: 339px;
+}
+.github {
+  color: #9dc284;
+  text-align: left;
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 988px;
+  top: 339px;
+}
+.project-showcase {
+  color: #9dc284;
+  text-align: left;
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 568px;
+  top: 339px;
+}
+.back {
+  color: #000000;
+  text-align: left;
+  font-family: "marine", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: 31px;
+  top: 181px;
+}
+._01 {
+  color: rgba(0, 0, 0, 0.7);
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 70px;
+  font-weight: 400;
+  position: absolute;
+  left: 155px;
+  top: 258px;
+  width: 117px;
+  height: 83px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  -webkit-text-stroke: 2px transparent;
+}
+._03 {
+  color: rgba(0, 0, 0, 0.7);
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 70px;
+  font-weight: 400;
+  position: absolute;
+  left: 988px;
+  top: 264px;
+  width: 140px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  -webkit-text-stroke: 2px transparent;
+}
+._02 {
+  color: rgba(0, 0, 0, 0.7);
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 70px;
+  font-weight: 400;
+  position: absolute;
+  left: 577px;
+  top: 264px;
+  width: 130px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  -webkit-text-stroke: 2px transparent;
+}
+.work-1 {
+  color: #000000;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 144px;
+  top: 591px;
+}
+.github-1 {
+  color: #000000;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 1001px;
+  top: 503px;
+}
+.github-2 {
+  color: #000000;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 1001px;
+  top: 545px;
+}
+.github-3 {
+  color: #000000;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 1001px;
+  top: 587px;
+}
+.github-4 {
+  color: #000000;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 1001px;
+  top: 630px;
+}
+.work-3 {
+  color: #000000;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 560px;
+  top: 582px;
+}
+.work-4 {
+  color: #000000;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 563px;
+  top: 630px;
+}
+.work-2 {
+  color: #000000;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 144px;
+  top: 639px;
+}
+.group-2 {
+  width: 4.17%;
+  height: 5.86%;
+  position: absolute;
+  right: 85.07%;
+  left: 10.76%;
+  bottom: 53.71%;
+  top: 40.43%;
+  overflow: visible;
+}
+.artificial-intelligence-brain-brain-thought-ai-automated-wires-electronic-ai {
+  width: 4.17%;
+  height: 5.86%;
+  position: absolute;
+  right: 26.32%;
+  left: 69.51%;
+  bottom: 54.1%;
+  top: 40.04%;
+  overflow: visible;
+}
+.arrow-1 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 419px;
+  top: 628px;
+  transform: translate(-1.29px, -22.85px);
+  overflow: visible;
+}
+.arrow-2 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 420px;
+  top: 672px;
+  transform: translate(-1.29px, -22.85px);
+  overflow: visible;
+}
+.arrow-3 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 825px;
+  top: 616px;
+  transform: translate(-1.29px, -22.85px);
+  overflow: visible;
+}
+.arrow-4 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 823px;
+  top: 668px;
+  transform: translate(-1.29px, -22.85px);
+  overflow: visible;
+}
+.arrow-5 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 1270px;
+  top: 535px;
+  transform: translate(-1.29px, -22.85px);
+  overflow: visible;
+}
+.arrow-6 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 1365px;
+  top: 580px;
+  transform: translate(-1.29px, -22.85px);
+  overflow: visible;
+}
+.arrow-7 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 1305px;
+  top: 622px;
+  transform: translate(-1.29px, -22.85px);
+  overflow: visible;
+}
+.arrow-8 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 1113px;
+  top: 664px;
+  transform: translate(-1.29px, -22.85px);
+  overflow: visible;
+}
+.arrow-1:hover{
+  transform: translate(-1.49px, -26.85px);
+  transition: transform 0.3s ease-in-out;
+}
+.arrow-2:hover{
+  transform: translate(-1.49px, -26.85px);
+  transition: transform 0.3s ease-in-out;
+}
+.arrow-3:hover{
+  transform: translate(-1.49px, -26.85px);
+  transition: transform 0.3s ease-in-out;
+}
+.arrow-4:hover{
+  transform: translate(-1.49px, -26.85px);
+  transition: transform 0.3s ease-in-out;
+}
+.arrow-5:hover{
+  transform: translate(-1.49px, -26.85px);
+  transition: transform 0.3s ease-in-out;
+}
+.arrow-6:hover{
+  transform: translate(-1.49px, -26.85px);
+  transition: transform 0.3s ease-in-out;
+}
+.arrow-7:hover{
+  transform: translate(-1.49px, -26.85px);
+  transition: transform 0.3s ease-in-out;
+}
+.arrow-8:hover{
+  transform: translate(-1.49px, -26.85px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.line-s1 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px 0 0 0;
+  width: 361px;
+  height: 0px;
+  position: absolute;
+  left: 549px;
+  top: 310px;
+  transform-origin: 0 0;
+  transform: rotate(90.157deg) scale(1, 1);
+}
+.line-s2 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px 0 0 0;
+  width: 361px;
+  height: 0px;
+  position: absolute;
+  left: 964px;
+  top: 310px;
+  transform-origin: 0 0;
+  transform: rotate(90.157deg) scale(1, 1);
+}
+.line-s3 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px 0 0 0;
+  width: 361px;
+  height: 0px;
+  position: absolute;
+  left: 123px;
+  top: 310px;
+  transform-origin: 0 0;
+  transform: rotate(90.157deg) scale(1, 1);
+}
+.group-1 {
+  height: auto;
+  position: absolute;
+  left: 577px;
+  top: 410px;
+  overflow: visible;
+}
+/* Contact */
+.back {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    left: 33px;
+    top: 182px;
+  }
+.starburst-shape {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 1185px;
+    top: 524px;
+    object-fit: cover;
+  }
+.line-12 {
+    margin-top: -3px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 3px 0 0 0;
+    width: 219px;
+    height: 0px;
+    position: absolute;
+    left: 249px;
+    top: 623px;
+    transform-origin: 0 0;
+    transform: rotate(0.262deg) scale(1, 1);
+  }
+.wonderfull {
+    color: #9dc284;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 298px;
+    top: 591px;
+  }
+.reach-out {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    position: absolute;
+    left: 96px;
+    top: 444px;
+  }
+.ellipse-1507 {
+  background: rgba(217, 217, 217, 0);
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2px;
+  width: 246px;
+  height: 108px;
+  position: absolute;
+  left: 58px;
+  top: 401px;
+}
+.amrinarosyada-778-gmail-com {
+  color: #9dc284;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 65px;
+  font-weight: 400;
+  text-decoration: underline;
+  position: absolute;
+  left: 359px;
+  top: 399px;
+}
+.amrinarosyada-778-gmail-com a{
+    color:#9dc284;
+    text-decoration: none;
+}
+.collaborations {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 90px;
+    font-weight: 400;
+    position: absolute;
+    left: 518px;
+    top: 555px;
+  }
+.for {
+    color: #000000;
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 90px;
+    font-weight: 400;
+    position: absolute;
+    left: 89px;
+    top: 553px;
+  }
+.let-s-make-something-great {
+    text-align: left;
+    font-family: "marine", sans-serif;
+    font-size: 95px;
+    font-weight: 400;
+    position: absolute;
+    left: 96px;
+    top: 271px;
+  }
+.let-s-make-something-great-span {
+    color: #000000;
+    font-family: "marine", sans-serif;
+    font-size: 90px;
+    font-weight: 400;
+  }
+.let-s-make-something-great-span2 {
+    color: #9dc284;
+    font-family: "marine", sans-serif;
+    font-size: 90px;
+    font-weight: 400;
+  }
+.let-s-make-something-great-span3 {
+    color: #000000;
+    font-family: "marine", sans-serif;
+    font-size: 90px;
+    font-weight: 400;
+  }
+  

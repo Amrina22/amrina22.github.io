@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Showcase 1</title>
+    <link rel="stylesheet" href="style-pro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="work.html" class="work">Work</a>
+      <div class="elip-back"></div>
+    </nav>
+    <div class="home">Project Showcase 1</div>
+    <div class="line-samping"></div>
+    <div class="main-con">
+      <div class="head-con">
+        <h1 class="place-your-title-here">Women's Fashion Product Sales Prediction to Improve Company <br>Quality and Profits</h1>
+        <div class="tag">
+          <div class="tag1">
+            <p class="tag-1">Regression</p>
+            <div class="rec-tag-1"></div>
+          </div>
+          <div class="tag2">
+            <p class="tag-2">Product Analysis</p>
+            <div class="rec-tag-2"></div>
+          </div>
+          <div class="tag3">
+            <p class="tag-3">Sale Prediction</p>
+            <div class="rec-tag-3"></div>
+          </div>
+          <div class="tag4">
+            <p class="tag-4">Quality and Profit</p>
+            <div class="rec-tag-4"></div>
+          </div>
+          <div class="tag5">
+            <p class="tag-5">Outlier</p>
+            <div class="rec-tag-5"></div>
+          </div>
+        </div>
+        <div class="main-con-con">
+          <div class="bookmark">
+            <a href="#header1" class="bm-ov">Problem Definition</a>
+            <a href="#header2" class="bm-dc">Data Preprocessing</a>
+            <a href="#header3" class="bm-dp">Exploratory Data</a>
+            <a href="#header4" class="bm-mod">Feature Engineering</a>
+            <a href="#header5" class="bm-moe">Modeling</a>
+            <a href="#header6" class="bm-con">Conclusion</a>
+          </div>
+          <article class="project-pred">
+            <section id="section-one">
+              <article class="project-pred-one">
+                <div class="problem-definition" id="header1">Problem Definition</div>
+                <div class="line-ov"></div>
+                <p class="para-pd">
+                  In this project, we aim to uncover actionable insights from BukaPedia&#039;s
+                  extensive e-commerce dataset using advanced machine learning techniques. The
+                  primary goal is to address the critical business question: &quot;How can
+                  BukaPedia maintain product quality while simultaneously increasing
+                  profitability?&quot;
+                  <br />
+                  To achieve this, we will identify key factors influencing product performance
+                  and sales through data-driven analysis, exploring relationships between
+                  product attributes, customer feedback, and purchasing patterns. By
+                  implementing and evaluating various machine learning algorithms, we will
+                  provide strategic recommendations to optimize product offerings and drive
+                  sustainable business growth.
+                </p>
+                <img class="img-dfinfo" src="static/img/df_info.png" />
+                <img class="df-tugas-1" src="static/img/df_tugas.png" />
+                <div class="gb-ov"></div>
+              </article>
+            </section>
+            <section id="section-two">
+              <article class="project-pred-two">
+                <div class="data-preprocessing" id="header2">Data Preprocessing</div>
+                <div class="line-dc"></div>
+                <h1 class="identify-outliers">Identify Outliers</h1>
+                <div class="rec-dpot"></div>
+                <div class="cd-scrap">
+                  <span>
+                    <span class="cd-scrap-span">import</span>
+                    <span class="cd-scrap-span2">numpy</span>
+                    <span class="cd-scrap-span3">as</span>
+                    <span class="cd-scrap-span4">
+                      np
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span5">
+                      # Calculate Z-scores
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span6">df[</span>
+                    <span class="cd-scrap-span7">&#039;z_score&#039;</span>
+                    <span class="cd-scrap-span8">] = (df[</span>
+                    <span class="cd-scrap-span9">&#039;quantity_sold&#039;</span>
+                    <span class="cd-scrap-span10">] - df[</span>
+                    <span class="cd-scrap-span11">&#039;quantity_sold&#039;</span>
+                    <span class="cd-scrap-span12">].mean()) / df[</span>
+                    <span class="cd-scrap-span13">&#039;quantity_sold&#039;</span>
+                    <span class="cd-scrap-span14">
+                      ].std()
+                      <br />
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span15">
+                      # Identify outliers
+                      <br />
+                    </span>
+                    <span class="cd-scrap-span16">outliers_z = df[(df[</span>
+                    <span class="cd-scrap-span17">&#039;z_score&#039;</span>
+                    <span class="cd-scrap-span18">] &gt;</span>
+                    <span class="cd-scrap-span19">3</span>
+                    <span class="cd-scrap-span20">) | (df[</span>
+                    <span class="cd-scrap-span21">&#039;z_score&#039;</span>
+                    <span class="cd-scrap-span22">] &lt;</span>
+                    <span class="cd-scrap-span23">-3</span>
+                    <span class="cd-scrap-span24">
+                      )]
+                      <br />
+                      outliers_z
+                    </span>
+                  </span>
+                </div>
+                <img class="img-dp" src="static/img/outliers.png" />                
+                <p class="para-dp">
+                  We’ll identify outliers on data using z-score. There are 98 data outliers.
+                  High Ratings: All listed outliers have a rating of 5, indicating that they are
+                  likely high-quality products. This could mean that their high sales
+                  performance is driven by customer satisfaction. Sales Volume: The
+                  quantity_sold values for some of these products are significantly higher than
+                  others, indicating exceptional sales performance. Pricing: The prices of the
+                  products vary, with some being relatively low, which might contribute to their
+                  high sales volume despite being in a saturated category.
+                </p>
+                <div class="gb-dc"></div>            
+              </article>
+            </section>
+            <section id="section-three">
+              <article class="project-pred-three">
+                <div class="exploratory-data" id="header3">Exploratory Data</div>
+                <div class="line-dp"></div>
+                <article class="project-pred-three-first">
+                  <h1 class="average-sales-by-rating">Average sales by rating</h1>
+                  <img class="average-sale-by-rating-1" src="static/img/average-sale-by-rating.png" />
+                </article>
+                <article class="project-pred-three-second">
+                  <h1 class="average-sales-by-category">Average sales by category</h1>
+                  <img class="average-sale-1" src="static/img/average-sale.png" />
+                </article>
+                <article class="project-pred-three-third">
+                  <h1 class="distribution-product">Distribution Product</h1>
+                  <img class="rating-distribution-1" src="static/img/rating-distribution.png" />
+                </article>
+                <article class="project-pred-three-fourth">
+                  <h1 class="best-selling-product">Best Selling Product</h1>
+                  <img class="top-sale-category-1" src="static/img/top-sale-category.png" />
+                </article> 
+                <article class="project-pred-three-fifth">
+                  <h1 class="price-vs-quantity-sold">Price vs Quantity Sold</h1>
+                  <img class="price-vs-quality-1" src="static/img/price-vs-quality.png" />
+                </article>
+                <article class="project-pred-three-sixth">
+                  <h1 class="correlation">Correlation</h1>
+                  <img class="correlation-1" src="static/img/correlation.png" />
+                  <div class="gb-dp"></div>
+                </article>          
+              </article>
+            </section>
+            <section id="section-four">
+              <article class="project-pred-four">
+                <div class="feature-engineering" id="header4">Feature Engineering</div>
+                <div class="line-mod"></div>
+                <article class="project-pred-four-first">
+                  <h1 class="encoding">Encoding</h1>
+                  <p class="para-fe-encod">
+                    Converts data formats in the form of objects into data that can be read by the
+                    system. 
+                  </p>
+                  <div class="rec-fe"></div>
+                  <div class="cd-encod">
+                    <span>
+                      <span class="cd-encod-span">
+                        label_encoder = preprocessing.LabelEncoder()
+                        <br />
+                        df[
+                      </span>
+                      <span class="cd-encod-span2">&#039;jumlah_view&#039;</span>
+                      <span class="cd-encod-span3">] = label_encoder.fit_transform(df[</span>
+                      <span class="cd-encod-span4">&#039;jumlah_view&#039;</span>
+                      <span class="cd-encod-span5">
+                        ])
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-encod-span6">
+                        # Handle missing values
+                        <br />
+                      </span>
+                      <span class="cd-encod-span7">data = df.dropna(subset=[</span>
+                      <span class="cd-encod-span8">&#039;price&#039;</span>
+                      <span class="cd-encod-span9">,</span>
+                      <span class="cd-encod-span10">&#039;rating&#039;</span>
+                      <span class="cd-encod-span11">,</span>
+                      <span class="cd-encod-span12">&#039;quantity_sold&#039;</span>
+                      <span class="cd-encod-span13">
+                        ])
+                        <br />
+                        <br />
+                        #
+                      </span>
+                      <span class="cd-encod-span14">
+                        One-hot encode &#039;subcategory&#039;
+                        <br />
+                      </span>
+                      <span class="cd-encod-span15">
+                        encoder = OneHotEncoder(sparse_output=False)
+                        <br />
+                        subcategory_encoded = encoder.fit_transform(data[[
+                      </span>
+                      <span class="cd-encod-span16">&#039;subcategory&#039;</span>
+                      <span class="cd-encod-span17">
+                        ]])
+                        <br />
+                      </span>
+                      <span class="cd-encod-span18">
+                        <br />
+                        # Convert the encoded categories into a DataFrame
+                        <br />
+                      </span>
+                      <span class="cd-encod-span19">
+                        subcategory_encoded_df = pd.DataFrame(subcategory_encoded,
+                        columns=encoder.get_feature_names_out([
+                      </span>
+                      <span class="cd-encod-span20">&#039;subcategory&#039;</span>
+                      <span class="cd-encod-span21">
+                        ]))
+                        <br />
+                      </span>
+                      <span class="cd-encod-span22">
+                        <br />
+                        # Concatenate the encoded subcategories with the original data
+                        <br />
+                      </span>
+                      <span class="cd-encod-span23">
+                        df = pd.concat([data.reset_index(drop=True), subcategory_encoded_df],
+                        axis=1)
+                      </span>
+                    </span>
+                  </div>                         
+                </article>
+                <article class="project-pred-four-second">
+                  <h1 class="add-new-column">Add New Feature</h1>
+                  <p class="para-fe-new">
+                    Added new columns to improve model accuracy and performance.
+                  </p>
+                  <div class="rec-split"></div>
+                  <div class="cd-newfeat">
+                    <span>
+                      <span class="cd-newfeat-span">
+                        # Calculate the profit of each product
+                        <br />
+                      </span>
+                      <span class="cd-newfeat-span2">df[</span>
+                      <span class="cd-newfeat-span3">&#039;revenue&#039;</span>
+                      <span class="cd-newfeat-span4">] = df[</span>
+                      <span class="cd-newfeat-span5">&#039;price&#039;</span>
+                      <span class="cd-newfeat-span6">] * df[</span>
+                      <span class="cd-newfeat-span7">&#039;quantity_sold&#039;</span>
+                      <span class="cd-newfeat-span8">
+                        ]
+                        <br />
+                        <br />
+                        df[
+                      </span>
+                      <span class="cd-newfeat-span9">&#039;log_revenue&#039;</span>
+                      <span class="cd-newfeat-span10">] = np.log1p(df[</span>
+                      <span class="cd-newfeat-span11">&#039;price&#039;</span>
+                      <span class="cd-newfeat-span12">] * df[</span>
+                      <span class="cd-newfeat-span13">&#039;quantity_sold&#039;</span>
+                      <span class="cd-newfeat-span14">
+                        ])
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-newfeat-span15">
+                        # Analyze how effectively the product generates revenue from each view
+                        <br />
+                        # Replace jumlah_view 0 with 1
+                        <br />
+                      </span>
+                      <span class="cd-newfeat-span16">df[</span>
+                      <span class="cd-newfeat-span17">&#039;jumlah_view_adjusted&#039;</span>
+                      <span class="cd-newfeat-span18">] = df[</span>
+                      <span class="cd-newfeat-span19">&#039;jumlah_view&#039;</span>
+                      <span class="cd-newfeat-span20">
+                        ].apply(lambda x: x if x &gt; 0 else 1)
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-newfeat-span21">
+                        # Calculate Revenue per View with jumlah_view_adjusted
+                        <br />
+                      </span>
+                      <span class="cd-newfeat-span22">df[</span>
+                      <span class="cd-newfeat-span23">&#039;Revenue_per_View&#039;</span>
+                      <span class="cd-newfeat-span24">] = df[</span>
+                      <span class="cd-newfeat-span25">&#039;revenue&#039;</span>
+                      <span class="cd-newfeat-span26">] / df[</span>
+                      <span class="cd-newfeat-span27">&#039;jumlah_view_adjusted&#039;</span>
+                      <span class="cd-newfeat-span28">
+                        ]
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-newfeat-span29">
+                        # Calculate production cost or cost per unit
+                        <br />
+                        # Assume the cost of each product is 70% of the selling price
+                        <br />
+                      </span>
+                      <span class="cd-newfeat-span30">df[</span>
+                      <span class="cd-newfeat-span31">&#039;cost&#039;</span>
+                      <span class="cd-newfeat-span32">] = df[</span>
+                      <span class="cd-newfeat-span33">&#039;price&#039;</span>
+                      <span class="cd-newfeat-span34">] * 0.7 * df[</span>
+                      <span class="cd-newfeat-span35">&#039;quantity_sold&#039;</span>
+                      <span class="cd-newfeat-span36">
+                        ]
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-newfeat-span37">
+                        # Calculate how much profit is generated from the sale of a product
+                        compared to its price
+                        <br />
+                      </span>
+                      <span class="cd-newfeat-span38">df[</span>
+                      <span class="cd-newfeat-span39">&#039;Profit_Margin&#039;</span>
+                      <span class="cd-newfeat-span40">] = df.apply(lambda row: ((row[</span>
+                      <span class="cd-newfeat-span41">&#039;revenue&#039;</span>
+                      <span class="cd-newfeat-span42">] - row[</span>
+                      <span class="cd-newfeat-span43">&#039;cost&#039;</span>
+                      <span class="cd-newfeat-span44">]) / row[</span>
+                      <span class="cd-newfeat-span45">&#039;revenue&#039;</span>
+                      <span class="cd-newfeat-span46">]) * 100 if row[</span>
+                      <span class="cd-newfeat-span47">&#039;revenue&#039;</span>
+                      <span class="cd-newfeat-span48">] &gt; 0 else 0, axis=1)</span>
+                    </span>
+                  </div>                              
+                </article>
+                <div class="gb-mod"></div>
+              </article>
+            </section>
+            <section id="section-five">
+              <article class="project-pred-five">
+                <div class="modeling" id="header5">Modeling</div>
+                <div class="line-moe"></div>
+                <article class="project-pred-five-first">
+                  <h1 class="model-selection">Model Selection</h1>
+                  <p class="para-mod-select">
+                    This case uses a regression model because the main goal is to predict a
+                    quantitative variable, namely the number of sales (quantity sold), based on
+                    various attributes such as price, product subcategory, and rating. Regression
+                    models are suitable for use when we want to understand and predict the
+                    relationship between independent variables (e.g. price, subcategory) and
+                    dependent variables that are continuous numerical (number of sales).
+                  </p>
+                </article>
+                <article class="project-pred-five-second">
+                  <h2 class="feature-and-target-variable">Feature and Target Variable</h2>
+                  <div class="rec-fetag"></div>
+                  <div class="cd-fetag">
+                    <span>
+                      <span class="cd-fetag-span">
+                        # Features and target variable
+                        <br />
+                        X = df[[
+                      </span>
+                      <span class="cd-fetag-span2">
+                        &#039;price&#039;, &#039;rating&#039;, &#039;Revenue_per_View&#039;,
+                        &#039;Profit_Margin&#039;, &#039;revenue&#039;, &#039;quantity_sold&#039;
+                      </span>
+                      <span class="cd-fetag-span3">
+                        ] + list(subcategory_encoded_df.columns)]
+                        <br />
+                        y = df[
+                      </span>
+                      <span class="cd-fetag-span4">&#039;log_revenue&#039;</span>
+                      <span class="cd-fetag-span5">]</span>
+                    </span>
+                  </div>                  
+                </article>
+                <article class="project-pred-five-third">
+                  <h2 class="split-data">Split Data</h2>
+                  <p class="para-split">
+                    Separating the dataset into train data and test data, with an 80% ration ratio
+                    for trains.
+                  </p>
+                  <div class="rec-newd"></div>
+                  <div class="cd-split">
+                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,
+                    random_state=42)
+                  </div>                  
+                </article>
+                <article class="project-pred-five-fourth">
+                  <h1 class="linear-regression">Linear Regression</h1>
+                  <div class="rec-lin"></div>
+                  <div class="cd-lin-mod">
+                    <span>
+                      <span class="cd-lin-mod-span">
+                        # Initialize the model
+                        <br />
+                      </span>
+                      <span class="cd-lin-mod-span2">
+                        model = LinearRegression()
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-lin-mod-span3">
+                        # Train the model
+                        <br />
+                      </span>
+                      <span class="cd-lin-mod-span4">model.fit(X_train, y_train)</span>
+                    </span>
+                  </div>
+                  <img class="img-lin-mod" src="static/img/linear-regression.png" />
+                  <div class="rec-linpred"></div>
+                  <div class="cd-linpred">
+                    <span>
+                      <span class="cd-linpred-span">
+                        # Make predictions
+                        <br />
+                      </span>
+                      <span class="cd-linpred-span2">
+                        y_pred = model.predict(X_test)
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-linpred-span3">
+                        # Calculate MSE and R-squared
+                        <br />
+                      </span>
+                      <span class="cd-linpred-span4">
+                        mse = mean_squared_error(y_test, y_pred)
+                        <br />
+                        r2 = r2_score(y_test, y_pred)
+                        <br />
+                        <br />
+                        print(
+                      </span>
+                      <span class="cd-linpred-span5">f&quot;Mean Squared Error:</span>
+                      <span class="cd-linpred-span6">&lcub;mse&rcub;</span>
+                      <span class="cd-linpred-span7">&quot;</span>
+                      <span class="cd-linpred-span8">
+                        )
+                        <br />
+                        print(
+                      </span>
+                      <span class="cd-linpred-span9">f&quot;R-squared:</span>
+                      <span class="cd-linpred-span10">&lcub;r2&rcub;&quot;)</span>
+                    </span>
+                  </div>
+                  <img class="img-lin-pred" src="static/img/linear-eva.png" />                                    
+                </article>
+                <article class="project-pred-five-fifth">
+                  <h1 class="random-forest-regression">Random Forest Regression</h1>
+                  <div class="rec-rand"></div>
+                  <div class="cd-rand">
+                    <span>
+                      <span class="cd-rand-span">
+                        # Initialize the model
+                        <br />
+                      </span>
+                      <span class="cd-rand-span2">
+                        model = RandomForestRegressor(n_estimators=100, random_state=42)
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-rand-span3">
+                        # Train the model
+                        <br />
+                      </span>
+                      <span class="cd-rand-span4">model.fit(X_train, y_train)</span>
+                    </span>
+                  </div>
+                  <img class="img-mod-ran" src="static/img/random.png" />
+                  <div class="rec-ranpred"></div>
+                  <div class="cd-ranpred">
+                    <span>
+                      <span class="cd-ranpred-span">
+                        # Make predictions
+                        <br />
+                      </span>
+                      <span class="cd-ranpred-span2">
+                        y_pred = model.predict(X_test)
+                        <br />
+                        <br />
+                      </span>
+                      <span class="cd-ranpred-span3">
+                        # Calculate MSE and R-squared
+                        <br />
+                      </span>
+                      <span class="cd-ranpred-span4">
+                        mse = mean_squared_error(y_test, y_pred)
+                        <br />
+                        r2 = r2_score(y_test, y_pred)
+                        <br />
+                        <br />
+                        print(
+                      </span>
+                      <span class="cd-ranpred-span5">f&quot;Mean Squared Error:</span>
+                      <span class="cd-ranpred-span6">&lcub;mse&rcub;</span>
+                      <span class="cd-ranpred-span7">&quot;</span>
+                      <span class="cd-ranpred-span8">
+                        )
+                        <br />
+                        print(
+                      </span>
+                      <span class="cd-ranpred-span9">f&quot;R-squared:</span>
+                      <span class="cd-ranpred-span10">&lcub;r2&rcub;</span>
+                      <span class="cd-ranpred-span11">&quot;</span>
+                      <span class="cd-ranpred-span12">)</span>
+                    </span>
+                  </div>
+                  <img class="img-ranpred" src="static/img/random-eva.png" />                                  
+                </article>
+                <div class="gb-moe"></div>                     
+              </article>
+            </section>
+            <section id="section-six">
+              <article class="project-pred-six">
+                <div class="conclusion" id="header6">Conclusion</div>
+                <div class="line-con"></div>
+                <article class="project-stock-six-first">
+                  <div class="para-con">
+                    <span>
+                      <span class="para-con-span">
+                        Here are the key insights from the analysis:
+                        <br />
+                      </span>
+                      <ol class="para-con-span2">
+                        <li>Sales Performance by Subcategory:</li>
+                      </ol>
+                      <ul class="para-con-span3">
+                        <li>
+                          Blouse is the highest-selling subcategory with a total of 78,927 units
+                          sold across 1,240 products, averaging 63.65 units per product.
+                        </li>
+                        <li>
+                          Sweater also performs well, with a total of 41,879 units sold, averaging
+                          239.31 units per product.
+                        </li>
+                        <li>
+                          Subcategories like Mini Dress, Celana Tidur, and Sneakers have high
+                          average sales per product, suggesting strong demand.
+                        </li>
+                      </ul>
+                      <ol class="para-con-span4">
+                        <li>Correlation Between Price, Discount, and Sales:</li>
+                      </ol>
+                      <ul class="para-con-span5">
+                        <li>
+                          The correlation between price and quantity sold is slightly negative
+                          (-0.014), suggesting that price may not have a strong impact on sales.
+                        </li>
+                        <li>
+                          There is no significant data available for discounts, which might
+                          indicate that discounts are not widely used in this dataset.
+                        </li>
+                      </ul>
+                      <ol class="para-con-span6">
+                        <li>Impact of Ratings on Sales:</li>
+                      </ol>
+                      <ul class="para-con-span7">
+                        <li>
+                          Products with a rating of 5 have the highest average sales (70.31
+                          units), followed by products with a rating of 4 (62.68 units).
+                        </li>
+                        <li>
+                          Lower ratings (3 and below) correlate with significantly fewer sales,
+                          emphasizing the importance of maintaining high product ratings for
+                          better performance.
+                        </li>
+                      </ul>
+                      <span class="para-con-span8">
+                        Suggestions to Maintain Quality and Increase Profit:
+                        <br />
+                      </span>
+                      <ol class="para-con-span9">
+                        <li>
+                          Focus on High-Performing Subcategories: Prioritize subcategories like
+                          Blouses, Sweaters, and Dresses, which consistently show high sales.
+                          Consider expanding these product lines or introducing new variations to
+                          capitalize on their demand.
+                        </li>
+                        <li>
+                          Improve Product Ratings: As high ratings are directly linked to better
+                          sales, it&#039;s essential to ensure customer satisfaction through
+                          improved quality checks, customer feedback loops, and product
+                          enhancements for low-rated items.
+                        </li>
+                        <li>
+                          Price Sensitivity Analysis: Since price doesn&#039;t have a strong
+                          negative correlation with sales, you could experiment with slight price
+                          increases in popular subcategories to maximize profits without
+                          significantly impacting demand.
+                        </li>
+                        <li>
+                          Evaluate the Role of Discounts: Since there&#039;s limited data on the
+                          use of discounts, consider introducing targeted promotions or discounts
+                          in underperforming categories to boost sales. <a href="https://github.com/Amrina22/regression">Full project</a>
+                        </li>
+                      </ol>
+                    </span>
+                  </div>                                  
+                </article>
+                <div class="gb-con"></div>
+              </article>
+            </section>
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer class="foot">
+      <h1 class="let-s-talk-about-the-next-big-thing">
+        Let’s Talk About The Next Big Thing !
+      </h1>
+      <div class="insta-footer">
+        <div class="line-ig"></div>
+        <h1 class="instagram">Instagram</h1>
+        <p class="osya-ar">@osya.ar</p>
+        <a href="https://www.instagram.com/osya.ar/"><img class="img-instagram" src="static/img/Instagram-hi.png" alt="Instagram"></a>
+      </div>
+      <div class="linkedin-footer">
+        <div class="line-linkind"></div>
+        <h1 class="linked-in">LinkedIn</h1>
+        <p class="amrinarosyada">amrinarosyada</p>
+        <a href="www.linkedin.com/in/amrina-rosyada2"><img class="img-linkedin" src="static/img/LinkedIn.png" alt="Linkedin"></a>
+      </div>
+    </footer>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const bookmarks = document.querySelectorAll('.bookmark a');
+
+    // Select all divs inside the articles that correspond to the section headers
+    const sections = document.querySelectorAll(`
+        .problem-definition, 
+        .data-preprocessing, 
+        .exploratory-data, 
+        .feature-engineering, 
+        .modeling, 
+        .conclusion
+    `);
+
+    const observerOptions = {
+        root: null,  // viewport
+        rootMargin: '0px',
+        threshold: 0.6  // 60% of the section should be in view
+    };
+
+    // Intersection Observer callback
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.id;  // Get the ID of the section in view
+            if (entry.isIntersecting) {
+                // Remove 'active' class from all bookmarks
+                bookmarks.forEach(bookmark => {
+                    bookmark.classList.remove('active');
+                });
+                // Add 'active' class to the current bookmark
+                const activeBookmark = document.querySelector(`.bookmark a[href="#${id}"]`);
+                activeBookmark.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    // Observe each unique section heading
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+</script>
+</body>
+</html>
